@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C7C0F18-2DF7-4C2F-AD90-62B9851A74B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Legacy.Core</RootNamespace>
+    <AssemblyName>Legacy.Core</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comparison\Commutative\BinaryNodeCommutativeOperationComparer.cs" />
+    <Compile Include="Comparison\ExpressionComparer.cs" />
+    <Compile Include="Comparison\IComparisonEffector.cs" />
+    <Compile Include="Comparison\IMemberBindingComparer.cs" />
+    <Compile Include="Comparison\INodeComparer.cs" />
+    <Compile Include="Comparison\ISwitchCaseComparer.cs" />
+    <Compile Include="Comparison\Strict\BinaryNodeSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\BlockNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\ConditionalNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\ConstantNodeDefaultEqualityComparer.cs" />
+    <Compile Include="Comparison\Strict\DebugInfoNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\DynamicNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\GotoNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\IndexNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\InvokeNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\LabelNodeOrdinalComparer.cs" />
+    <Compile Include="Comparison\Strict\LambdaNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\ListInitNodeSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\LoopNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\MemberAccessNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\MemberBindingSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\MemberInitNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\MethodCallNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\NewArrayBoundsNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\NewArrayInitNodeSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\NewNodeDefaultComparer.cs" />
+    <Compile Include="Comparison\Strict\NodeClrTypeComparer.cs" />
+    <Compile Include="Comparison\Strict\NodeExpressionTypeComparer.cs" />
+    <Compile Include="Comparison\Strict\ParameterNodeOrdinalComparer.cs" />
+    <Compile Include="Comparison\Strict\RuntimeVariablesNodeSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\SwitchCaseComparer.cs" />
+    <Compile Include="Comparison\Strict\SwitchNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\TryNodeSequentialComparer.cs" />
+    <Compile Include="Comparison\Strict\TypeBinaryNodeComparer.cs" />
+    <Compile Include="Comparison\Strict\UnaryNodeMethodComparer.cs" />
+    <Compile Include="Comparison\Strict\UnaryNodeOperandComparer.cs" />
+    <Compile Include="Composition\BinaryComposer.cs" />
+    <Compile Include="Composition\UnaryComposer.cs" />
+    <Compile Include="IManipulationUnit.cs" />
+    <Compile Include="ManipulationType.cs" />
+    <Compile Include="ParameterExchanger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reduction\LocalInvoker.cs" />
+    <Compile Include="Reduction\TransparentIdentifierRemover.cs" />
+    <Compile Include="Remap\LambdaRemapper.cs" />
+    <Compile Include="Remap\ParameterRemapper.cs" />
+    <Compile Include="TrivialUnit.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
